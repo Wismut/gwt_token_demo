@@ -1,6 +1,6 @@
 package com.example.jwtdemo.rest;
 
-import com.example.jwtdemo.dto.UserDto;
+import com.example.jwtdemo.dto.AdminUserDto;
 import com.example.jwtdemo.model.User;
 import com.example.jwtdemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +22,12 @@ public class AdminRestControllerV1 {
     }
 
     @GetMapping("users/{id}")
-    public ResponseEntity<UserDto> getUserById(@PathVariable("id") Long id) {
+    public ResponseEntity<AdminUserDto> getUserById(@PathVariable("id") Long id) {
         User user = userService.findById(id);
         if (user == null) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        UserDto result = UserDto.fromUser(user);
+        AdminUserDto result = AdminUserDto.fromUser(user);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }

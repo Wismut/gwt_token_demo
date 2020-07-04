@@ -27,13 +27,13 @@ public class AdminUserDto {
     }
 
     public static AdminUserDto fromUser(User user) {
-        AdminUserDto userDto = new AdminUserDto();
-        userDto.setId(user.getId());
-        userDto.setUsername(user.getUsername());
-        userDto.setFirstName(user.getFirstName());
-        userDto.setLastName(user.getLastName());
-        userDto.setEmail(user.getEmail());
-        userDto.setStatus(user.getStatus().name());
-        return userDto;
+        AdminUserDto adminUserDto = new AdminUserDto();
+        adminUserDto.setId(user.getId());
+        adminUserDto.setUsername(user.getUsername());
+        adminUserDto.setFirstName(user.getFirstName());
+        adminUserDto.setLastName(user.getLastName());
+        adminUserDto.setEmail(user.getEmail());
+        adminUserDto.setStatus(user.getStatus().name());
+        return adminUserDto;
     }
 }
